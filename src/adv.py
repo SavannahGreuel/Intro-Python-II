@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from item import Item
+import time
 
 # Declare all the rooms
 
@@ -40,16 +41,81 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-name = input('Hello there! What is your name?')
+name = input('Hello there! What is your name?\n >>')
 player = Player(name, room['outside'])
-print(f'Welcome {name}, ready for our adventure?') 
 
+print(f'Welcome {name}, ready for our adventure?') 
+print('-------------')
+time.sleep(2)
+
+print('The evil monkeys have stolen my hidden treasure, and i need your help to retrieve it') 
+print('-------------')
+time.sleep(2)
+
+print('Navigate through the magical world of of narnia to find the treasure') 
+print('-------------')
+time.sleep(2)
 # Write a loop that:
 #
 # * Prints the current room name
-# * Prints the current description (the textwrap module might be useful here).
-# * Waits for user input and decides what to do.
-#
+
+while True:
+    print(f'You are located {player.room.name}')
+    print('-------------')
+    time.sleep(2)
+
+    # * Prints the current description (the textwrap module might be useful here).
+    print(f'{player.room.description}')
+    print('-------------')
+    time.sleep(2)
+
+
+    # * Waits for user input and decides what to do.
+    print("Please enter n to go north, e to go east, w to go west, s to go south, or q to quit")
+    print('-------------')
+    time.sleep(1)
+    choice = input("'Enter Command'>> ").lower()
+
+    choice = choice.split(" ")
+
+    if (len(choice) == 1):
+        if(choice[0] == 'n'):
+            try:
+                time.sleep(1)
+                player.room = player.room.n_to
+            except AttributeError:
+                print("Cannot move North, try a different direction")
+                time.sleep(3)
+        
+        elif(choice[0] == 'e'):
+            try:
+                time.sleep(1)
+                player.room = player.room.e_to
+            except AttributeError:
+                print("Cannot move East, try a different direction")
+                time.sleep(3)   
+
+        elif(choice[0] == 'w'):
+            try:
+                time.sleep(1)
+                player.room = player.room.w_to
+            except AttributeError:
+                print("Cannot move West, try a different direction")
+                time.sleep(3)    
+
+        elif(choice[0] == 'w'):
+            try:
+                time.sleep(1)
+                player.room = player.room.s_to
+            except AttributeError:
+                print("Cannot move South, try a different direction")
+                time.sleep(3) 
+
+        elif(choice[0] == "q"):
+            print('\n See you next time!')
+            time.sleep(1)
+            quit()
+
 # If the user enters a cardinal direction, attempt to move to the room there.
 # Print an error message if the movement isn't allowed.
 #
