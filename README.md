@@ -22,10 +22,10 @@ Up to this point, you've gotten your feet wet by working on a bunch of small Pyt
 
 The `/src` directory contains the files `adv.py`, which is where the main logic for the entire game should live, `room.py`, which will contain the definition of the Room class, and `player.py`, which will contain the definition of the Player class. 
 
-* >>Put the Room class in `room.py` based on what you see in `adv.py`.
+<!-- * >>Put the Room class in `room.py` based on what you see in `adv.py`.
 
-* >>Put the Player class in `player.py`.
-
+* >>Put the Player class in `player.py`. -->
+<!-- 
 * Create a file called `item.py` and add an `Item` class in there.
 
   * This will be the _base class_ for specialized item types to be declared
@@ -33,15 +33,15 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
 
   * The item should have `name` and `description` attributes.
 
-     * Hint: the name should be one word for ease in parsing later.
+     * Hint: the name should be one word for ease in parsing later. -->
 
-* Add the ability to add items to rooms.
+<!-- * Add the ability to add items to rooms.
 
   * The `Room` class should be extended with a `list` that holds the `Item`s
     that are currently in that room.
 
   * Add functionality to the main loop that prints out all the items that are
-    visible to the player when they are in that room.
+    visible to the player when they are in that room. -->
 
 * Add capability to add `Item`s to the player's inventory. The inventory can
   also be a `list` of items "in" the player, similar to how `Item`s can be in a
