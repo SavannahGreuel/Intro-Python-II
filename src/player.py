@@ -6,3 +6,10 @@ class Player:
         self.name = name
         self.room = room
         self.inventory = inventory
+
+    def playerInventory(self):
+        inventory = []
+        for item in self.inventory:
+            inventory.append(item.name)
+
+        return inventory
