@@ -22,9 +22,9 @@ Up to this point, you've gotten your feet wet by working on a bunch of small Pyt
 
 The `/src` directory contains the files `adv.py`, which is where the main logic for the entire game should live, `room.py`, which will contain the definition of the Room class, and `player.py`, which will contain the definition of the Player class. 
 
-* Put the Room class in `room.py` based on what you see in `adv.py`.
+* >>Put the Room class in `room.py` based on what you see in `adv.py`.
 
-* Put the Player class in `player.py`.
+* >>Put the Player class in `player.py`.
 
 * Create a file called `item.py` and add an `Item` class in there.
 
