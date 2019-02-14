@@ -50,7 +50,7 @@ print('The evil monkeys have stolen my hidden treasure, and i need your help to 
 print('-------------')
 time.sleep(2)
 
-print('Navigate through the magical world of of narnia to find the treasure and win the game') 
+print('Navigate through the magical world of of narnia to find the treasure. Find the treasure to win the game') 
 print('-------------')
 time.sleep(2)
 
@@ -90,7 +90,32 @@ while True:
 
 
     if (len(choice) == 1):
-        if(choice[0] == 'n'):
+        if(choice[0] == "q"):
+            print('\n See you next time!')
+            time.sleep(1)
+            quit()
+
+        elif(choice[0] == 'x'):
+            print("To Navigate: enter n to go north, e to go east, w to go west, and s to go south")
+            print('-------------')
+            time.sleep(3)
+            print("Instructions: enter q to quit, enter i or inventory to see whats in your inventory")
+            print('-------------')
+            time.sleep(3)
+            print("To see what items are in the room you are currently in, enter r")
+            print('-------------')
+            time.sleep(3)
+            print("To pick up an item that is in the room, enter 'get 'item name'' or 'take 'items name' ")
+            print('-------------')
+            time.sleep(3)
+            print("To drop an item that is in your inventory, enter 'drop 'item name''  ")
+            print('-------------')
+            time.sleep(3)
+            print("To see all these instructions again at any point during your adventure, enter instructions ")
+            print('-------------')
+            time.sleep(3)
+
+        elif(choice[0] == 'n'):
             try:
                 time.sleep(1)
                 player.room = player.room.n_to
@@ -122,17 +147,14 @@ while True:
                 print("Cannot move South, try a different direction")
                 time.sleep(3) 
 
-
         elif(choice[0] == 'r'):
-            if (player.room.items == []):
+            if(player.room.items == []):
                 print('There are no items in this room')
                 time.sleep(3)
-
             else:
                 print(f'Room contents: {player.room.items}')
                 time.sleep(3)
                 
-
         elif(choice[0] == 'i' or 'inventory'):
             if(player.inventory == []):
                 print('You have nothing in your possession')
@@ -140,36 +162,10 @@ while True:
             elif (player.inventory.count('hidden-treasure') > 0):
                 print('You have successfully completed the adventure! You Win....')
                 break
-
             else:
                 print(f'Your Possessions: {player.inventory}')
                 time.sleep(3)
-                
-
-        elif(choice[0] == 'x'):
-            print("To Navigate: enter n to go north, e to go east, w to go west, and s to go south")
-            print('-------------')
-            time.sleep(3)
-            print("Instructions: enter q to quit, enter i or inventory to see whats in your inventory")
-            print('-------------')
-            time.sleep(3)
-            print("To see what items are in the room you are currently in, enter r")
-            print('-------------')
-            time.sleep(3)
-            print("To pick up an item that is in the room, enter 'get 'item name'' or 'take 'items name' ")
-            print('-------------')
-            time.sleep(3)
-            print("To drop an item that is in your inventory, enter 'drop 'item name''  ")
-            print('-------------')
-            time.sleep(3)
-            print("To see all these instructions again at any point during your adventure, enter instructions ")
-            print('-------------')
-            time.sleep(3)
-    
-        elif(choice[0] == "q"):
-            print('\n See you next time!')
-            time.sleep(1)
-            quit()
+        
         else:
             time.sleep(1)
             print('Hmmm, looks like you gave an invalid command...try again')  
