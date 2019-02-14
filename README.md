@@ -47,7 +47,7 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
   also be a `list` of items "in" the player, similar to how `Item`s can be in a
   `Room`. -->
 
-* Add a new type of sentence the parser can understand: two words.
+<!-- * Add a new type of sentence the parser can understand: two words.
 
   * Until now, the parser could just understand one sentence form:
 
@@ -62,7 +62,7 @@ The `/src` directory contains the files `adv.py`, which is where the main logic 
     such as "take coins" or "drop sword".
 
   * Split the entered command and see if it has 1 or 2 words in it to determine
-    if it's the first or second form.
+    if it's the first or second form. -->
 
 * Implement support for the verb `get` followed by an `Item` name. This will be
   used to pick up `Item`s.
